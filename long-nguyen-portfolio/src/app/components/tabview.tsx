@@ -1,16 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
 
 const TabView = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,23 +27,45 @@ const TabView = () => {
 
   return (
     <>
-      <div ref={headerRef} className="header">
-      </div>
+      <div ref={headerRef} className="header"></div>
       {isVisible && (
-        <div className="sticky top-10 z-50 flex justify-center">
-          <NavigationMenu className="border rounded-xl p-2 px-6 navigation-menu">
-            <NavigationMenuList className="flex space-x-10">
-              <NavigationMenuItem className="navigation-menu-item">
-                <NavigationMenuLink href="#">Home</NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem className="navigation-menu-item">
-                <NavigationMenuLink href="#">About Me</NavigationMenuLink>{" "}
-              </NavigationMenuItem>
-              <NavigationMenuItem className="navigation-menu-item">
-                <NavigationMenuLink href="#">Projects</NavigationMenuLink>{" "}
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+        <div className="sticky top-8 flex items-center justify-center w-full">
+          <nav className="tabview shadow-xl">
+            <ul className="flex space-x-1">
+              <li>
+                <a
+                  href="#"
+                  className="tabview-item transition-colors duration-200"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="tabview-item transition-colors duration-200"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="tabview-item transition-colors duration-200"
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="tabview-item transition-colors duration-200"
+                >
+                  Settings
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       )}
     </>

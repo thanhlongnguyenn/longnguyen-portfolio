@@ -1,6 +1,7 @@
 'use client';
 
 import DecryptedText from '@/components/ui/decryptedtext';
+import { json } from 'stream/consumers';
 
 export default function Greetings() {
     const jsonData = {
@@ -28,7 +29,7 @@ export default function Greetings() {
 
     return (
       <div className="flex">
-        <pre className="json">
+        <pre>
           <div className="greeting-comment">
             <DecryptedText
               text="// extracted data from long-nguyen"
@@ -53,12 +54,15 @@ export default function Greetings() {
                   key={index}
                   text={value}
                   animateOn="view"
+                  className='greeting-json-value'
                   revealDirection="start"
                   speed={80}
                   sequential={true}
+                  maxIterations={10}
                 />
               );
             }
+            console.log(part);
             return part;
           })}
         </pre>

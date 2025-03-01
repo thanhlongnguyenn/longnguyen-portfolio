@@ -21,16 +21,6 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.navigation-menu {
-  background: var(--foreground);
-  color: var(--background);
-}
-
-.navigation-menu-item:hover {
-  background: var(--accentColor);
-  color: var(--foreground);
-}
-
 .ascii-art {
     font-family: monospace;
     white-space: pre;
@@ -46,4 +36,31 @@ body {
 
 .greeting-json-key {
   color: #6F42C1
+}
+
+.greeting-json-value {
+  color: var(--accentColor)
+}
+
+.tabview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.tabview-item {
+  padding: 0.8rem 1rem;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.tabview-item:hover {
+  background: var(--accentColor);
+  color: var(--background);
 }
