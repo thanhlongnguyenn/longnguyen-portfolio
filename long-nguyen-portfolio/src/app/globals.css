@@ -11,6 +11,7 @@
   :root {
     --background: #333333; 
     --foreground: #D6D2BD;
+    --accentColor: #F15025;
   }
 }
 
@@ -18,4 +19,32 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'JetBrains Mono', monospace;
+}
+
+.navigation-menu {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.navigation-menu-item:hover {
+  background: var(--accentColor);
+  color: var(--foreground);
+}
+
+.mirror-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.blur-active {
+  opacity: 10;
 }
