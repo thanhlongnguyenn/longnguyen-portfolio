@@ -62,7 +62,6 @@ export default function Greetings() {
                 />
               );
             }
-            console.log(part);
             return part;
           })}
         </pre>

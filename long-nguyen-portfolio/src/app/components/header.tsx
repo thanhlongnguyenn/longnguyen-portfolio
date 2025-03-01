@@ -40,7 +40,7 @@ const Header = () => {
             {/* <img src="longnguyen.png" alt="longnguyen-ascii" /> */}
           </div>
           <div className="hidden md:block text-sm font-bold">
-            Current time: {clientDateTime}
+            {/* Current time: {clientDateTime} */}
           </div>
         </div>
       </div>
