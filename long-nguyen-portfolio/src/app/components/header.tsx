@@ -4,13 +4,16 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 const Header = () => {
-    const datetime = new Date().toLocaleTimeString('en-US', {
+    // get the client current time
+    let clientDateTime = new Date().toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
         hour12: true,
         timeZoneName: 'shortOffset',
     });
 
+ 
+    // for sticky navigation menu
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -34,9 +37,11 @@ const Header = () => {
             Last visitor: Melbourne AU
           </div>
           <div className="flex justify-center">
-            <div className="text-xl font-bold">Long Nguyen</div>
+            {/* <img src="longnguyen.png" alt="longnguyen-ascii" /> */}
           </div>
-          <div className="hidden md:block text-sm font-bold">Current time: {datetime}</div>
+          <div className="hidden md:block text-sm font-bold">
+            Current time: {clientDateTime}
+          </div>
         </div>
       </div>
     );
