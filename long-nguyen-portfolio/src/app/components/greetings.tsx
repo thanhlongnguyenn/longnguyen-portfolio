@@ -53,7 +53,7 @@ export default function Greetings() {
                 <DecryptedText
                   key={index}
                   text={value}
-                  animateOn="view"
+                  animateOn="both"
                   className='greeting-json-value'
                   revealDirection="start"
                   speed={80}

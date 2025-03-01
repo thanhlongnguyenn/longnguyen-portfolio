@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #333333;
+  --foreground: #D6D2BD;
+  --accentColor: #F15025;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,4 +64,20 @@ body {
 .tabview-item:hover {
   background: var(--accentColor);
   color: var(--background);
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  :root {
+    font-size: 0.75rem;
+  }
+  .tabview {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .tabview-item {
+    padding: 0.7rem 0.9rem;
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
 }
