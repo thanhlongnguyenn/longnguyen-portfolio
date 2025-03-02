@@ -29,6 +29,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   delay = 0,
 }) => {
   const [inView, setInView] = useState(false);
+  const [outView, setOutView] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -72,6 +73,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
       : undefined,
     config,
   });
+  
 
   return (
     <animated.div ref={ref} style={springProps}>

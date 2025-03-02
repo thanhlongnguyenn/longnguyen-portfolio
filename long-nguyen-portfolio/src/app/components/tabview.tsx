@@ -62,8 +62,7 @@ const TabView = () => {
                 </li>
 
                 <li
-                  onClick={() => scrollTo("projects")}
-                  className="tabview-item"
+                  onClick={() => scrollTo("projects")} className="tabview-item"
                 >
                   Projects
                 </li>

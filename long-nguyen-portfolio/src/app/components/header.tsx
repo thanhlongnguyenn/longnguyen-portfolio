@@ -33,14 +33,11 @@ const Header = () => {
     return (
       <div>
         <div className="max-w-auto flex justify-between items-center my-10 mx-28">
-          <div className="hidden md:block text-sm font-bold">
-            Last visitor: Melbourne AU
-          </div>
           <div className="flex justify-center">
             {/* <img src="longnguyen.png" alt="longnguyen-ascii" /> */}
           </div>
           <div className="hidden md:block text-sm font-bold">
-            {/* Current time: {clientDateTime} */}
+            {/* Last visitor: Melbourne AU */}
           </div>
         </div>
       </div>
