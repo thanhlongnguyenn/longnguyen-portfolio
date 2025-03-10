@@ -82,8 +82,19 @@ body {
   border-radius: 9999px;
 }
 
+.tabview-padding {
+  padding: 0rem;
+}
+
+.header {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+}
+
 /* Responsive styles */
-@media (max-width: 1206px) {
+@media (max-width: 900px) {
   :root {
     font-size: 0.75rem;
   }
@@ -95,5 +106,16 @@ body {
   .tabview-item {
     padding: 0.1rem 0.8rem;
     font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .logo {
+    visibility: hidden;
+  }
+
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

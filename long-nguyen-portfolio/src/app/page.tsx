@@ -7,8 +7,8 @@ import Projects from "./pages/projects";
 
 export default function Home() {
   return (
-    <>
-      <div className="sticky top-10">
+    <div>
+      <div className="sticky top-0 z-auto">
         <TabView />
       </div>
       <div className="overflow-hidden">
@@ -28,6 +28,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
