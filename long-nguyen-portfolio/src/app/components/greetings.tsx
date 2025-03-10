@@ -1,7 +1,7 @@
 'use client';
 
 import DecryptedText from '@/components/ui/decryptedtext';
-import { json } from 'stream/consumers';
+import Typewritter from 'typewriter-effect';
 
 export default function Greetings() {
     const jsonData = {
@@ -30,15 +30,23 @@ export default function Greetings() {
     return (
       <div className="flex">
         <pre>
-          <div className="greeting-comment">
-            <DecryptedText
+          <span className="greeting-comment">
+            <span>// </span>
+            <Typewritter
+              options={{
+                strings: ["extracted data from long-nguyen"],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+            {/* <DecryptedText
               text="// extracted data from long-nguyen"
               animateOn="view"
               revealDirection="start"
               speed={50}
               sequential={true}
-            />
-          </div> <br />
+            /> */}
+          </span>
 
           {formattedJsonString.split(/(___.*?___)/).map((part, index) => {
             if (part.startsWith("___") && part.endsWith("___")) {
@@ -54,7 +62,8 @@ export default function Greetings() {
                   key={index}
                   text={value}
                   animateOn="both"
-                  className='greeting-json-value'
+                  className="greeting-json-value"
+                  parentClassName="greeting-json-value"
                   revealDirection="start"
                   speed={80}
                   sequential={true}

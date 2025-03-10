@@ -4,28 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import AnimatedContent from "@/components/ui/animatedcontent";
 
 const TabView = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(!entry.isIntersecting);
-      },
-      { threshold: 0 }
-    );
-
-    if (headerRef.current) {
-      observer.observe(headerRef.current);
-    }
-
-    return () => {
-      if (headerRef.current) {
-        observer.unobserve(headerRef.current);
-      }
-    };
-  }, [headerRef]);
-
+  
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -38,13 +17,10 @@ const TabView = () => {
 
   return (
     <>
-      <div ref={headerRef} className="header"></div>
-      {isVisible && (
         <div className="sticky top-8 flex items-center justify-center w-full">
           <AnimatedContent
             distance={20}
             direction="vertical"
-            reverse={isVisible}
             config={{ tension: 80, friction: 20 }}
             initialOpacity={0.2}
             animateOpacity
@@ -74,7 +50,6 @@ const TabView = () => {
             </nav>
           </AnimatedContent>
         </div>
-      )}
     </>
   );
 };

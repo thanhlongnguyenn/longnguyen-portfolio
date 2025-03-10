@@ -7,30 +7,27 @@ import Projects from "./pages/projects";
 
 export default function Home() {
   return (
-    <div>
-      <div id="home">
-        <Header />
-        <div className="flex justify-center md:mt-52">
-          <div className="flex w-full max-w-6xl">
-            <div className="flex-1 flex items-center justify-center text-lg cursor-default">
-              <Greetings />
+    <>
+      <div className="sticky top-10">
+        <TabView />
+      </div>
+      <div className="overflow-hidden">
+        <div>
+          <div id="home" className="h-dvh">
+            <div className="flex justify-center items-center md:mt-52">
+              <div className="flex w-full justify-center items-center max-w-6xl text-lg cursor-default">
+                <Greetings />
+              </div>
             </div>
           </div>
+          <div id="about" className="h-dvh">
+            <About />
+          </div>
+          <div id="projects" className="h-dvh">
+            <Projects />
+          </div>
         </div>
-
-        <TabView />
-        <div style={{ height: "60vh" }}></div>
-
-        <div id="about">
-          <About />
-        </div>
-        <div style={{ height: "100vh" }}></div>
-        <div id="projects">
-          <Projects />
-        </div>
-
-        <div style={{ height: "500vh" }}></div>
       </div>
-    </div>
+    </>
   );
 }

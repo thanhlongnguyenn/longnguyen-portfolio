@@ -32,7 +32,7 @@ const Header = () => {
     // TODO: Implement a function to get the visitor's location
     return (
       <div>
-        <div className="max-w-auto flex justify-between items-center my-10 mx-28">
+        <div className="max-w-auto flex justify-between items-center my-10 mx-15">
           <div className="flex justify-center">
             {/* <img src="longnguyen.png" alt="longnguyen-ascii" /> */}
           </div>

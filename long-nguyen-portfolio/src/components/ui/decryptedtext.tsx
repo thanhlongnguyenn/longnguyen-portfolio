@@ -15,6 +15,7 @@ interface DecryptedTextProps {
   encryptedClassName?: string;
   parentClassName?: string;
   animateOn?: "view" | "hover" | "both";
+  onLoop?: () => void; // Add the onLoop property
   [key: string]: any;
 }
 
@@ -30,6 +31,7 @@ export default function DecryptedText({
   parentClassName = "",
   encryptedClassName = "",
   animateOn = "hover",
+  onLoop, // Destructure the onLoop property
   ...props
 }: DecryptedTextProps) {
   const [displayText, setDisplayText] = useState<string>(text);
@@ -139,6 +141,7 @@ export default function DecryptedText({
             } else {
               clearInterval(interval);
               setIsScrambling(false);
+              if (onLoop) onLoop(); // Call the onLoop callback
               return prevRevealed;
             }
           } else {
@@ -148,6 +151,7 @@ export default function DecryptedText({
               clearInterval(interval);
               setIsScrambling(false);
               setDisplayText(text);
+              if (onLoop) onLoop(); // Call the onLoop callback
             }
             return prevRevealed;
           }
@@ -173,6 +177,7 @@ export default function DecryptedText({
     useOriginalCharsOnly,
     animateOn,
     hasAnimated,
+    onLoop, // Add onLoop to the dependency array
   ]);
 
   useEffect(() => {
